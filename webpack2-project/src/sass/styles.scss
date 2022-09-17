@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "fondos";
+
+$danger:#ff1678;
+
+#section{
+    .subseccion{
+        h1{
+            &.title{
+                color:$danger;
+            }  
+        }
+    }
+    .subseccion2{
+        color: green;
+        h1{
+            color: blue;
+        }
+    } 
+}
+
+#section2{
+    .subseccion {
+        h2.title{
+            color:yellow;
+        }
+    }
+}
