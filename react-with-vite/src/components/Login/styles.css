@@ -1,0 +1,17 @@
+.login{
+ background-color: #3282b5;
+ width: 60vw;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ padding: 30px;
+}
+
+.options{
+  margin-top: 20px;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
