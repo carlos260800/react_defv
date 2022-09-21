@@ -1,0 +1,44 @@
+$primary: pink;
+$danger: red;
+$success: lime;
+$border-radius: 0rem;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+.hero{
+  background-color: $dark;
+  height: calc(100vh - 56px);
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  h1,p,button{
+    color:white;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+  }
+
+  iframe{
+      position: absolute;
+      left:0;
+      right: 0;
+      bottom: 0;
+      top:0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+  }
+  
+  &::before{
+      content: "";
+      position: absolute;
+      left:0;
+      right: 0;
+      bottom: 0;
+      top:0;
+      background: rgba(0,0,0,0.5);
+      z-index: 2;
+  }
+
+}
