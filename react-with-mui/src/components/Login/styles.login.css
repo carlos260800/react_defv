@@ -1,0 +1,51 @@
+/* * {
+  box-sizing: border-box;
+  outline: 1px solid lightgreen;
+} */
+
+body {
+  background-color: #1bb952;
+}
+
+button {
+  height: 25px;
+}
+input {
+  height: 19px;
+}
+.button-signin {
+  margin-top: 15px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.icon {
+  font-size: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.verContra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor {
+  display: grid;
+  position: relative;
+  margin: auto auto;
+}
+
+.centrar{
+  justify-content: center;
+  align-items: center;
+} 
+
+.formulario{
+  margin-top: 5rem;
+}

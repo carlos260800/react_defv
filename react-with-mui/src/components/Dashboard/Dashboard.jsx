@@ -1,43 +1,63 @@
-import "./styles.dashboard.css";
-import { useState, useEffect, Fragment } from "react";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import FormControl from "@mui/material/FormControl";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import InputAdornment from "@mui/material/InputAdornment";
+import InputLabel from "@mui/material/InputLabel";
+import * as React from "react";
 
 const Dashboard = () => {
-  const [input, setInput] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const [values, setValues] = React.useState({
+    user: "",
+    password: "",
+    showPassword: false,
+  });
 
-  /* Tipos de datos que podemos declarar
-  '', 
-  true, false, 
-  {}, 
-  [], 
-  0,1,2,...,
-  "texto"
-*/
-  const cambioEnInput = (event) => {
-    setInput(event.target.value);
+  const handleChange = (prop) => (event) => {
+    console.log(event.target.value);
+    setValues({ ...values, [prop]: event.target.value });
   };
 
-  const mostrarContrasena = () => {
-    setShowPassword(!showPassword);
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
   };
 
-  useEffect(() => {
-    console.log(input);
-  }, [input]);
-
-  useEffect(() => {
-    console.log(showPassword);
-  }, [showPassword]);
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
   return (
-    <Fragment>
-      <input
-        type={showPassword ? "text" : "password"}
-        onChange={cambioEnInput}
-        value={input}
-      ></input>
-      <button onClick={mostrarContrasena}>👀</button>
-    </Fragment>
+    <>
+      <FormControl variant="standard" sx={{ m: 1, mt: 3, width: "25ch" }}>
+        <InputLabel htmlFor="user">User</InputLabel>
+        <Input id="user" value={values.user} onChange={handleChange("user")} />
+      </FormControl>
+      <FormControl sx={{ m: 1, mt: 3, width: "25ch" }} variant="standard">
+        <InputLabel htmlFor="password">Password</InputLabel>
+        
+        <Input
+          id="password"
+          type={values.showPassword ? "text" : "password"}
+          value={values.password}
+          onChange={handleChange("password")}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+      </FormControl>
+    </>
   );
 };
 
