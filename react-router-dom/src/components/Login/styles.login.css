@@ -1,0 +1,21 @@
+ button{
+  height: 25px;
+}
+input{
+  height: 19px;
+}
+.button-signin{
+  margin-top: 15px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.icon{
+  font-size: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
