@@ -1,0 +1,48 @@
+/* * {
+  box-sizing: border-box;
+  outline: 1px solid red;
+} */
+ul{
+  margin: 0;
+  padding: 0;
+}
+.form{
+  display: flex;
+  justify-content: space-between;
+}
+input, button{
+  margin: 2rem 0;
+  padding: 10px 20px;
+  height: 50px;
+  font-size: 45px;
+}
+button{
+  height: unset;
+}
+.contact-row {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 1rem;
+}
+.contact-info > h4 {
+  font-size: 1.5rem;
+  margin: 0px;
+}
+.contact-avatar {
+  border-radius: 50%;
+}
+.phone-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phone-icon > span {
+  font-size: 2rem;
+}
